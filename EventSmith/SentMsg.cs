@@ -8,11 +8,17 @@ namespace 定时事件
 {
     public class SentMsg
     {
+
+        public SentMsg(DealEvent dl)
+        {
+            dl.dealMsg += SentOndMsg;
+        }
+
         public void SentOndMsg(string uid, string msg)
         {
-            if (msg == "123")
+            if (uid == "123")
             {
-                Console.WriteLine("SentMsg:"  +uid);
+                Console.WriteLine("SentMsg:"  + msg);
             }
         }
     }

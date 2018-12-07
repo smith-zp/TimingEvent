@@ -8,11 +8,17 @@ namespace 定时事件
 {
     public class SendWeChat
     {
+
+        public SendWeChat(DealEvent dl)
+        {
+            dl.dealMsg += SentOndWeChat;
+        }
+
         public void SentOndWeChat(string uid, string msg)
         {
-            if (msg == "456")
+            if (uid == "456")
             {
-                Console.WriteLine("SendWeChat:" + uid);
+                Console.WriteLine("SendWeChat:" + msg);
             }
         }
     }

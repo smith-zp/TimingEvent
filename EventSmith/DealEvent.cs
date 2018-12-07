@@ -14,16 +14,16 @@ namespace 定时事件
 
         public void IsEqual(DateTime zreoDate, DateTime nowDate, string uid, string msg,out bool reslut)
         {
-            reslut = false;
+            reslut = true;
             DateTime _zreoDate = new DateTime(zreoDate.Year, zreoDate.Month, zreoDate.Day, zreoDate.Hour, zreoDate.Minute, zreoDate.Second);
             DateTime _nowDate = new DateTime(nowDate.Year, nowDate.Month, nowDate.Day, nowDate.Hour, nowDate.Minute, nowDate.Second);
 
             if (_zreoDate == _nowDate)
             {
-                reslut = true;
                 Console.WriteLine("id： {0}", uid);
                 dealMsg?.Invoke(uid, msg);
             }
+            else { reslut = false; }
 
         }
     }

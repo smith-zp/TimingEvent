@@ -17,11 +17,8 @@ namespace 定时事件
         static void Main(string[] args)
         {
             dl = new DealEvent();
-            SentMsg sm = new SentMsg();
-            SendWeChat sw = new SendWeChat();
-
-            dl.dealMsg += sm.SentOndMsg;
-            dl.dealMsg += sw.SentOndWeChat;
+            SentMsg sm = new SentMsg(dl);
+            SendWeChat sw = new SendWeChat(dl);
 
             dt = new DateTime[3];
             dt[0] = DateTime.Now.AddSeconds(5);
